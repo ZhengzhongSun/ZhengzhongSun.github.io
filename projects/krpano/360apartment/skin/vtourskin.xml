@@ -229,10 +229,12 @@
 	       onout="tween(scale,0.5);"
 	       onloaded="if(linkedscene AND skin_settings.tooltips_hotspots, copy(tooltip,scene[get(linkedscene)].title); loadstyle(skin_tooltips); );"
 				 /> -->
-	<style name="skin_hotspotstyle" url="vtourskin_hotspot.png" scale="0.5" edge="top" oy="0" distorted="true"
+	<style name="skin_hotspotstyle" url="vtourskin_hotspot.png" scale="0.5" edge="top" distorted="true"
 	       tooltip=""
 				 onclick="if(linkedscene, set(enabled,false); skin_hidetooltips(); tween(depth|alpha|oy|rx, 4000|0.0|-50|-60, 0.5, default, loadscene(get(linkedscene),null,get(skin_settings.loadscene_flags),get(skin_settings.loadscene_blend)); skin_updatescroll(); ); );"
-				 onloaded="add_all_the_time_tooltip();"
+				 onover="tween(scale,0.55);"
+	       onout="tween(scale,0.5);"
+				 onloaded="if(!webvr.isenabled, add_all_the_time_tooltip(););"
 	       />
 
 
